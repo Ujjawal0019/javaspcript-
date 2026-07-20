@@ -1,31 +1,58 @@
-// Dates
 
-let myDate = new Date()
-// console.log(myDate.toString());
-// console.log(myDate.toDateString());
-// console.log(myDate.toLocaleString());
-// console.log(typeof myDate);
+// 1. CREATING DATES
 
-// let myCreatedDate = new Date(2023, 0, 23)
-// let myCreatedDate = new Date(2023, 0, 23, 5, 3)
-// let myCreatedDate = new Date("2023-01-14")
-let myCreatedDate = new Date("01-14-2023")
-// console.log(myCreatedDate.toLocaleString());
 
-let myTimeStamp = Date.now()
+// Current Date and Time
+const now = new Date();
+console.log("Right now:", now);
 
-// console.log(myTimeStamp);
-// console.log(myCreatedDate.getTime());
-// console.log(Math.floor(Date.now()/1000));
+// From a Date String (ISO 8601 format is recommended)
+const specificDateString = new Date("2026-07-21T12:00:00Z");
+console.log("From string:", specificDateString);
 
-let newDate = new Date()
-console.log(newDate);
-console.log(newDate.getMonth() + 1);
-console.log(newDate.getDay());
+// From Milliseconds since Epoch (January 1, 1970)
+const fromEpoch = new Date(1700000000000); 
+console.log("From epoch:", fromEpoch);
 
-// `${newDate.getDay()} and the time `
+// From specific components (Year, Month, Day, Hour, Min, Sec)
+// Note: Months are 0-indexed! (6 = July)
+const specificComponents = new Date(2026, 6, 21, 14, 30, 0); 
+console.log("From components:", specificComponents);
 
-newDate.toLocaleString('default', {
-    weekday: "long",
-    
-})
+
+
+// 2. EXTRACTING DATE COMPONENTS
+
+
+const myDate = new Date("2026-12-25T10:30:00");
+
+console.log("\n--- Extracting Components ---");
+console.log("Year:", myDate.getFullYear());       
+console.log("Month:", myDate.getMonth());         
+console.log("Date:", myDate.getDate());           
+console.log("Day of Week:", myDate.getDay());     
+console.log("Hours:", myDate.getHours());         
+console.log("Minutes:", myDate.getMinutes());     
+console.log("Timestamp:", myDate.getTime());      
+
+// 3. FORMATTING DATES FOR DISPLAY
+
+
+const eventDate = new Date(2026, 10, 15, 18, 0); 
+
+console.log("\n--- Formatting Dates ---");
+
+// ISO string (standard for APIs and databases)
+console.log("ISO:", eventDate.toISOString()); 
+
+// Localized Date String
+console.log("Local Date:", eventDate.toLocaleDateString('en-US')); 
+
+// Highly customizable localized formatting
+const customFormat = eventDate.toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+console.log("Custom Format:", customFormat);
