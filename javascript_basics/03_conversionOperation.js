@@ -1,68 +1,37 @@
-let score = "hitesh"
+// String to Number Conversion
+const strNum = "42";
+console.log("Using Number():", Number(strNum));
+console.log("Using Unary Plus:", +strNum);
+console.log("Using parseInt:", parseInt("42px", 10));
+console.log("Using parseFloat:", parseFloat("3.14"));
 
-//console.log(typeof score);
-//console.log(typeof(score));
+console.log("\n--- Number to String Conversion ---");
 
-let valueInNumber = Number(score)
-//console.log(typeof valueInNumber);
-//console.log(valueInNumber);
+const numVal = 100;
+console.log("Using String():", String(numVal));
+console.log("Using toString():", numVal.toString());
+console.log("Using Template Literal:", `${numVal}`);
 
+console.log("\n--- Boolean Conversion (Truthy/Falsy) ---");
 
-// "33" => 33
-// "33abc" => NaN
-//  true => 1; false => 0
+// Falsy values in JavaScript: false, 0, "", null, undefined, NaN
+// Everything else is Truthy
+console.log("String to Boolean:", Boolean("Hello"));
+console.log("Empty String to Boolean:", Boolean(""));
+console.log("Number to Boolean (0):", Boolean(0));
+console.log("Number to Boolean (1):", Boolean(1));
+console.log("Using Double NOT (!!):", !!100);
 
-let isLoggedIn = "hitesh"
+console.log("\n--- Implicit Type Coercion ---");
 
-let booleanIsLoggedIn = Boolean(isLoggedIn)
-//  console.log(booleanIsLoggedIn);
+// JavaScript automatically converts types behind the scenes (Coercion)
+// The + operator prefers strings (concatenation)
+console.log("String + Number:", "5" + 2);
 
-// 1 => true; 0 => false
-// "" => false
-// "hitesh" => true
+// Other math operators prefer numbers
+console.log("String - Number:", "5" - 2);
+console.log("String * Number:", "5" * 2);
 
-let someNumber = 33
-
-let stringNumber = String(someNumber)
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
-
-// *********************** Operations ***********************
-
-let value = 3
-let negValue = -value
-// console.log(negValue);
-
-// console.log(2+2);
-// console.log(2-2);
-// console.log(2*2);
-// console.log(2**3);
-// console.log(2/3);
-// console.log(2%3);
-
-let str1 = "hello"
-let str2 = " hitesh"
-
-let str3 = str1 + str2
-// console.log(str3);
-
-// console.log("1" + 2);
-// console.log(1 + "2");
-// console.log("1" + 2 + 2);
-// console.log(1 + 2 + "2");
-
-// console.log( (3 + 4) * 5 % 3);
-
-// console.log(+true);
-// console.log(+"");
-
-let num1, num2, num3
-
-num1 = num2 = num3 = 2 + 2
-
-let gameCounter = 100
-++gameCounter;
-console.log(gameCounter);
-
-// link to study
-// https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
+// Loose vs Strict Equality
+console.log("Loose Equality (==):", "5" == 5); 
+console.log("Strict Equality (===):", "5" === 5);
