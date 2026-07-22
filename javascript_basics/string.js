@@ -1,35 +1,45 @@
-const name = "hitesh"
-const repoCount = 50
+// Creating strings
+const singleQuotes = 'Hello';
+const doubleQuotes = "World";
+const templateLiteral = `${singleQuotes} ${doubleQuotes}!`;
+console.log("Template Literal:", templateLiteral);
 
-// console.log(name + repoCount + " Value");
+// String Length
+const text = "JavaScript";
+console.log("Length of text:", text.length);
 
-console.log(`Hello my name is ${name} and my repo count is ${repoCount}`);
+// Changing Case
+console.log("Uppercase:", text.toUpperCase());
+console.log("Lowercase:", text.toLowerCase());
 
-const gameName = new String('hitesh-hc-com')
+// Searching within a string
+const sentence = "The quick brown fox jumps over the lazy dog";
+console.log("Index of 'brown':", sentence.indexOf("brown"));
+console.log("Includes 'fox':", sentence.includes("fox"));
+console.log("Starts with 'The':", sentence.startsWith("The"));
+console.log("Ends with 'dog':", sentence.endsWith("dog"));
 
-// console.log(gameName[0]);
-// console.log(gameName.__proto__);
+// Extracting parts of a string
+// slice(startIndex, endIndex) - endIndex is exclusive
+console.log("Slice (4, 9):", sentence.slice(4, 9));
+console.log("Substring (4, 9):", sentence.substring(4, 9));
 
+// Modifying strings (Strings are immutable, these return new strings)
+const messyString = "   Trim me   ";
+console.log("Trimmed:", messyString.trim());
+console.log("Trim Start:", messyString.trimStart());
+console.log("Trim End:", messyString.trimEnd());
 
-// console.log(gameName.length);
-// console.log(gameName.toUpperCase());
-console.log(gameName.charAt(2));
-console.log(gameName.indexOf('t'));
+const replaceString = "I like cats and cats are great";
+console.log("Replace first instance:", replaceString.replace("cats", "dogs"));
+console.log("Replace all instances:", replaceString.replaceAll("cats", "dogs"));
 
-const newString = gameName.substring(0, 4)
-console.log(newString);
+// Splitting a string into an array
+const csvData = "apple,banana,orange";
+const fruitsArray = csvData.split(",");
+console.log("Split into array:", fruitsArray);
 
-const anotherString = gameName.slice(-8, 4)
-console.log(anotherString);
-
-const newStringOne = "   hitesh    "
-console.log(newStringOne);
-console.log(newStringOne.trim());
-
-const url = "https://hitesh.com/hitesh%20choudhary"
-
-console.log(url.replace('%20', '-'))
-
-console.log(url.includes('sundar'))
-
-console.log(gameName.split('-'));
+// Padding strings
+const strNum = "5";
+console.log("Pad Start:", strNum.padStart(3, "0"));
+console.log("Pad End:", strNum.padEnd(3, "0"));
