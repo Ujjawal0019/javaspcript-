@@ -1,31 +1,43 @@
-const marvel_heros = ["thor", "Ironman", "spiderman"]
-const dc_heros = ["superman", "flash", "batman"]
+// ARRAY PART 2: ITERATION & ADVANCED METHODS
 
-// marvel_heros.push(dc_heros)
+const numbers = [1, 2, 3, 4, 5];
 
-// console.log(marvel_heros);
-// console.log(marvel_heros[3][1]);
+// Iterating over an array
+numbers.forEach((num) => {
+  console.log("forEach loop:", num);
+});
 
-// const allHeros = marvel_heros.concat(dc_heros)
-// console.log(allHeros);
+// Transforming an array (returns a new array)
+const doubled = numbers.map(num => num * 2);
+console.log("map (doubled):", doubled);
 
-const all_new_heros = [...marvel_heros, ...dc_heros]
+// Filtering an array (returns a new array)
+const evens = numbers.filter(num => num % 2 === 0);
+console.log("filter (evens):", evens);
 
-// console.log(all_new_heros);
+// Reducing an array to a single value
+const sum = numbers.reduce((total, current) => total + current, 0);
+console.log("reduce (sum):", sum);
 
-const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]
+// Searching inside an array
+const firstEven = numbers.find(num => num % 2 === 0);
+console.log("find (first even):", firstEven);
 
-const real_another_array = another_array.flat(Infinity)
-console.log(real_another_array);
+const hasThree = numbers.includes(3);
+console.log("includes (3):", hasThree);
 
+const indexThree = numbers.indexOf(3);
+console.log("indexOf (3):", indexThree);
 
+// Slicing an array (does not modify original)
+const sliced = numbers.slice(1, 4);
+console.log("slice (index 1 to 3):", sliced);
 
-console.log(Array.isArray("Hitesh"))
-console.log(Array.from("Hitesh"))
-console.log(Array.from({name: "hitesh"})) // interesting
+// Combining arrays
+const moreNumbers = [6, 7];
+const combined = numbers.concat(moreNumbers);
+console.log("concat:", combined);
 
-let score1 = 100
-let score2 = 200
-let score3 = 300
-
-console.log(Array.of(score1, score2, score3));
+// Converting array to a string
+const joinedString = numbers.join("-");
+console.log("join:", joinedString);
