@@ -1,39 +1,28 @@
-// array
+// ARRAY PART 1: BASICS & MODIFICATION
 
-const myArr = [0, 1, 2, 3, 4, 5]
-const myHeors = ["shaktiman", "naagraj"]
+const fruits = ["Apple", "Banana", "Cherry"];
+console.log("Initial array:", fruits);
 
-const myArr2 = new Array(1, 2, 3, 4)
-// console.log(myArr[1]);
+console.log("First element:", fruits[0]);
+console.log("Last element:", fruits[fruits.length - 1]);
+console.log("Array length:", fruits.length);
 
-// Array methods
+// Adding elements
+fruits.push("Date");
+console.log("After push (add to end):", fruits);
 
-// myArr.push(6)
-// myArr.push(7)
-// myArr.pop()
+fruits.unshift("Apricot");
+console.log("After unshift (add to start):", fruits);
 
-// myArr.unshift(9)
-// myArr.shift()
+// Removing elements
+const removedLast = fruits.pop();
+console.log("After pop (remove from end):", fruits);
+console.log("Removed item:", removedLast);
 
-// console.log(myArr.includes(9));
-// console.log(myArr.indexOf(3));
+const removedFirst = fruits.shift();
+console.log("After shift (remove from start):", fruits);
+console.log("Removed first item:", removedFirst);
 
-// const newArr = myArr.join()
-
-// console.log(myArr);
-// console.log( newArr);
-
-
-// slice, splice
-
-console.log("A ", myArr);
-
-const myn1 = myArr.slice(1, 3)
-
-console.log(myn1);
-console.log("B ", myArr);
-
-
-const myn2 = myArr.splice(1, 3)
-console.log("C ", myArr);
-console.log(myn2);
+// Modifying an element by index
+fruits[1] = "Blueberry";
+console.log("After reassignment:", fruits);
