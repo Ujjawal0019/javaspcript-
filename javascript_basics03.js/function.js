@@ -1,70 +1,64 @@
+// Function Declaration (Hoisted, can be called before it is defined)
+console.log("Hoisted call:", greetUser("Alice"));
 
-function sayMyName(){
-    console.log("H");
-    console.log("I");
-    console.log("T");
-    console.log("E");
-    console.log("S");
-    console.log("H");
+function greetUser(name) {
+  return `Hello, ${name}!`;
 }
 
-// sayMyName()
+// Function Expression (Not hoisted, stored in a variable)
+const calculateArea = function(width, height) {
+  return width * height;
+};
+console.log("Expression Area:", calculateArea(5, 10));
 
-// function addTwoNumbers(number1, number2){
+// Default Parameters
+function createGreeting(name, greeting = "Hello") {
+  return `${greeting}, ${name}!`;
+}
+console.log("With default:", createGreeting("Bob"));
+console.log("Override default:", createGreeting("Bob", "Good morning"));
 
-//     console.log(number1 + number2);
-// }
+// Rest Parameters (Gathering multiple arguments into an array)
+function sumAllNumbers(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+console.log("Sum Rest Params:", sumAllNumbers(1, 2, 3, 4, 5));
 
-function addTwoNumbers(number1, number2){
+// The 'arguments' Object (Available in traditional functions, not arrow functions)
+function logArguments() {
+  for (let i = 0; i < arguments.length; i++) {
+    console.log(`Argument at index ${i}:`, arguments[i]);
+  }
+}
+logArguments("apple", "banana", "cherry");
 
-    // let result = number1 + number2
-    // return result
-    return number1 + number2
+// Immediately Invoked Function Expression (IIFE)
+(function() {
+  const privateVar = "I am isolated from the global scope";
+  console.log("IIFE runs immediately:", privateVar);
+})();
+
+// Closures (A function that remembers variables from its outer scope)
+function createCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
 }
 
-const result = addTwoNumbers(3, 5)
+const myCounter = createCounter();
+console.log("Closure execution 1:", myCounter());
+console.log("Closure execution 2:", myCounter());
+console.log("Closure execution 3:", myCounter());
 
-// console.log("Result: ", result);
-
-
-function loginUserMessage(username = "sam"){
-    if(!username){
-        console.log("PLease enter a username");
-        return
-    }
-    return `${username} just logged in`
+// Higher-Order Functions (Functions that take functions as arguments or return them)
+function executeOperation(a, b, operationCallback) {
+  return operationCallback(a, b);
 }
 
-// console.log(loginUserMessage("hitesh"))
-// console.log(loginUserMessage("hitesh"))
-
-
-function calculateCartPrice(val1, val2, ...num1){
-    return num1
+function multiply(x, y) {
+  return x * y;
 }
 
-// console.log(calculateCartPrice(200, 400, 500, 2000))
-
-const user = {
-    username: "hitesh",
-    prices: 199
-}
-
-function handleObject(anyobject){
-    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
-}
-
-// handleObject(user)
-handleObject({
-    username: "sam",
-    price: 399
-})
-
-const myNewArray = [200, 400, 100, 600]
-
-function returnSecondValue(getArray){
-    return getArray[1]
-}
-
-// console.log(returnSecondValue(myNewArray));
-console.log(returnSecondValue([200, 400, 500, 1000]));
+console.log("Higher-Order execution:", executeOperation(4, 5, multiply));
