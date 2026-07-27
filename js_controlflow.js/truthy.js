@@ -1,43 +1,46 @@
-const userEmail = []
 
-if (userEmail) {
-    console.log("Got user email");
+// Falsy values in JavaScript: false, 0, -0, 0n, "", null, undefined, NaN
+// Everything else is Truthy
+
+// Using truthiness in standard if/else statements
+const userName = "Alice"; 
+
+if (userName) {
+  console.log("User exists:", userName);
 } else {
-    console.log("Don't have user email");
+  console.log("No user found");
 }
 
-// falsy values
+const emptyString = "";
 
-// false, 0, -0, BigInt 0n, "", null, undefined, NaN
-
-//truthy values
-// "0", 'false', " ", [], {}, function(){}
-
-// if (userEmail.length === 0) {
-//     console.log("Array is empty");
-// }
-
-const emptyObj = {}
-
-if (Object.keys(emptyObj).length === 0) {
-    console.log("Object is empty");
+if (emptyString) {
+  console.log("This will not run because empty strings are falsy");
+} else {
+  console.log("Empty string evaluated to false");
 }
 
-// Nullish Coalescing Operator (??): null undefined
+// Logical OR (||) for setting default values
+// It returns the first truthy value it finds
+const userInput1 = "";
+const displayName1 = userInput1 || "Guest";
+console.log("Assigned Name (||):", displayName1);
 
-let val1;
-// val1 = 5 ?? 10
-// val1 = null ?? 10
-// val1 = undefined ?? 15
-val1 = null ?? 10 ?? 20
+// Logical AND (&&) for short-circuit execution (Guard Clauses)
+// It executes the right side ONLY if the left side is truthy
+const isLoggedIn = true;
+isLoggedIn && console.log("Welcome back to your dashboard!");
 
+const hasPermission = false;
+hasPermission && console.log("This will not print");
 
+// The Nullish Coalescing Operator (??)
+// Unlike || which checks for ANY falsy value, ?? ONLY checks for null or undefined.
+// This is crucial when 0 or "" are valid data.
+const userScore = 0; 
 
-console.log(val1);
+const scoreWithOR = userScore || 100; 
+console.log("Score using || (overrides 0):", scoreWithOR);
 
-// Terniary Operator
+const scoreWithNullish = userScore ?? 100; 
+console.log("Score using ?? (preserves 0):", scoreWithNullish);
 
-// condition ? true : false
-
-const iceTeaPrice = 100
-iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80")
