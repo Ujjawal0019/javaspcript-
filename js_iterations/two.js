@@ -1,21 +1,27 @@
+// ARRAY PART 2: SEARCHING, SLICING, AND COMBINING
 
-let index = 0
-// while (index <= 10) {
-//     console.log(`Value of index is ${index}`);
-//     index = index + 2
-// }
+const numbers = [10, 20, 30, 40, 50];
 
-let myArray = ['flash', "batman", "superman"]
+// Searching inside an array
+const hasThirty = numbers.includes(30);
+console.log("includes (30):", hasThirty);
 
-let arr = 0
-while (arr < myArray.length) {
-    //console.log(`Value is ${myArray[arr]}`);
-    arr = arr + 1
-}
+const indexThirty = numbers.indexOf(30);
+console.log("indexOf (30):", indexThirty);
 
-let score = 11
+const firstLarge = numbers.find(num => num > 25);
+console.log("find (first > 25):", firstLarge);
 
-do {
-    console.log(`Score is ${score}`);
-    score++
-} while (score <= 10);
+// Slicing an array (does not modify original)
+// slice(startIndex, endIndex) - endIndex is exclusive
+const sliced = numbers.slice(1, 4);
+console.log("slice (index 1 to 3):", sliced);
+
+// Combining arrays
+const moreNumbers = [60, 70];
+const combined = numbers.concat(moreNumbers);
+console.log("concat:", combined);
+
+// Converting array to a string
+const joinedString = numbers.join(" | ");
+console.log("join:", joinedString);
