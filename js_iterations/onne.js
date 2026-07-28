@@ -1,49 +1,24 @@
-// for
+// ARRAY PART 1: CREATION AND BASIC MODIFICATION
 
-for (let i = 0; i <= 10; i++) {
-    const element = i;
-    if (element == 5) {
-        //console.log("5 is best number");
-    }
-    //console.log(element);
-    
-}
+const fruits = ["Apple", "Banana", "Cherry"];
+console.log("Initial array:", fruits);
+console.log("First element:", fruits[0]);
+console.log("Array length:", fruits.length);
 
-// console.log(element);
+// Adding elements
+fruits.push("Date");
+console.log("After push (add to end):", fruits);
 
-for (let i = 1; i <= 10; i++) {
-    //console.log(`Outer loop value: ${i}`);
-   for (let j = 1; j <= 10; j++) {
-    //console.log(`Inner loop value ${j} and inner loop ${i}`);
-    //console.log(i + '*' + j + ' = ' + i*j );
-   }
-    
-}
-let myArray = ["flash", "batman", "superman"]
-//console.log(myArray.length);
-for (let index = 0; index < myArray.length; index++) {
-    const element = myArray[index];
-    //console.log(element);
-    
-}
+fruits.unshift("Apricot");
+console.log("After unshift (add to start):", fruits);
 
+// Removing elements
+const removedLast = fruits.pop();
+console.log("After pop (remove from end):", fruits);
 
-// break and continue
+const removedFirst = fruits.shift();
+console.log("After shift (remove from start):", fruits);
 
-// for (let index = 1; index <= 20; index++) {
-//     if (index == 5) {
-//         console.log(`Detected 5`);
-//         break
-//     }
-//    console.log(`Value of i is ${index}`);
-    
-// }
-
-for (let index = 1; index <= 20; index++) {
-    if (index == 5) {
-        console.log(`Detected 5`);
-        continue
-    }
-   console.log(`Value of i is ${index}`);
-    
-}
+// Modifying an element by index
+fruits[1] = "Blueberry";
+console.log("After reassignment:", fruits);
