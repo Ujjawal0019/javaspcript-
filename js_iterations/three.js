@@ -1,42 +1,25 @@
+// ARRAY PART 3: ITERATION AND TRANSFORMATION
 
+const scores = [85, 92, 78, 90, 88];
 
-// for of
+// Iterating over an array
+scores.forEach((score, index) => {
+  console.log(`Score at index ${index}:`, score);
+});
 
-// ["", "", ""]
-// [{}, {}, {}]
+// Transforming an array (returns a new array)
+const boostedScores = scores.map(score => score + 5);
+console.log("map (boosted scores):", boostedScores);
 
-const arr = [1, 2, 3, 4, 5]
+// Filtering an array (returns a new array)
+const aGrades = scores.filter(score => score >= 90);
+console.log("filter (scores >= 90):", aGrades);
 
-for (const num of arr) {
-    //console.log(num);
-}
+// Reducing an array to a single value
+const totalScore = scores.reduce((total, current) => total + current, 0);
+console.log("reduce (total score):", totalScore);
 
-const greetings = "Hello world!"
-for (const greet of greetings) {
-    //console.log(`Each char is ${greet}`)
-}
-
-// Maps
-
-const map = new Map()
-map.set('IN', "India")
-map.set('USA', "United States of America")
-map.set('Fr', "France")
-map.set('IN', "India")
-
-
-// console.log(map);
-
-for (const [key, value] of map) {
-    // console.log(key, ':-', value);
-}
-
-const myObject = {
-    game1: 'NFS',
-    game2: 'Spiderman'
-}
-
-// for (const [key, value] of myObject) {
-//     console.log(key, ':-', value);
-    
-// }
+// Sorting an array 
+// Note: sort() mutates the original array, so we spread it into a new array first
+const sortedScores = [...scores].sort((a, b) => a - b);
+console.log("sort (ascending):", sortedScores);
